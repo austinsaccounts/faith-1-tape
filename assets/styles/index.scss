@@ -4,6 +4,27 @@
 
 $simpleFont: 'Noto Sans', sans-serif;
 $flavorfulfont: 'Lobster', cursive;
+$mobile-width: 400px;
+$tablet-width: 750px;
+$desktop-width: 751px;
+
+
+@mixin mobile {
+  @media (max-width: #{$mobile-width}) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media (min-width: #{$mobile-width + 1px}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
 
 html {
     box-sizing: border-box;
@@ -17,12 +38,27 @@ html {
     padding: 0px;
 
 }
+.navBarImages {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 25px;
+}
+
 .navLogoBar {
   top: 0;
   min-height: 80px;
   background-color: #7c3f32;
   position: fixed;
   width: 100%;
+  margin-bottom: 40px;
+  #mobileMenu {
+    height: 25px;
+  }
+  #Logo {
+    height: 70px;
+  }
 }
 
 .parallaxImage1 {
@@ -59,7 +95,10 @@ html {
   .productImage {
     img {
       padding: 0px 20px;
+      @include mobile {
       width: 100%;
+    }
+
     }
     //this only works as mobile setting
     min-width: 100px;
@@ -71,6 +110,9 @@ html {
   text-align: center;
   justify-content: space-around;
   flex-direction: column;
+  @include desktop {
+  flex-direction: row;
+}
   .icon {
     height: 200px;
     padding: 30px 20px 0px 20px;

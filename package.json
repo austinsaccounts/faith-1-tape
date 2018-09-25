@@ -16,7 +16,8 @@
     "url": "git+https://cvgellhorn@github.com/cvgellhorn/webpack-boilerplate.git"
   },
   "dependencies": {
-    "lodash": "4.17.11"
+    "lodash": "4.17.11",
+    "uikit": "^3.0.0-rc.16"
   },
   "devDependencies": {
     "@babel/core": "7.1.0",
