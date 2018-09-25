@@ -60,6 +60,22 @@ html {
     height: 70px;
   }
 }
+//
+#mobileDropDownContainer {
+  background-color: white;
+  margin-top: 0px;
+  width: 200px;
+  height: auto;
+  padding-left: 30px;
+  position: fixed;
+  display: none;
+  @include mobile {
+    margin-top: 120px;
+  }
+  @include tablet {
+    margin-top: 120px;
+  }
+}
 
 .parallaxImage1 {
   min-height: 100%;
