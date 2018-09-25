@@ -7,6 +7,11 @@ $flavorfulfont: 'Lobster', cursive;
 $mobile-width: 400px;
 $tablet-width: 750px;
 $desktop-width: 751px;
+$dkgreen: #5F7367;
+$purple: #B07BAC;
+$grey: #D9D7DD;
+$ltblue: #E6FDFF;
+$ltgreen: #DBF9F4;
 
 
 @mixin mobile {
@@ -49,12 +54,15 @@ html {
 .navLogoBar {
   top: 0;
   min-height: 80px;
-  background-color: #7c3f32;
+  background-color: $dkgreen;
   position: fixed;
   width: 100%;
   margin-bottom: 40px;
   #mobileMenu {
     height: 25px;
+    @include desktop {
+      display: none;
+    }
   }
   #Logo {
     height: 70px;
@@ -69,6 +77,12 @@ html {
   padding-left: 30px;
   position: fixed;
   display: none;
+  #mobileDropDown {
+    font-size: .8em;
+    a {
+    color: black;
+  }
+  }
   @include mobile {
     margin-top: 120px;
   }
@@ -100,7 +114,7 @@ html {
 }
 
 .productInfo {
-  background-color: #7c3f32;
+  background-color: lighten($dkgreen, 40);
   height: auto;
   text-align: center;
   .productDescription {
@@ -122,12 +136,16 @@ html {
 }
 
 .productIcons {
+  background-color: lighten($dkgreen, 40);
   display: flex;
   text-align: center;
   justify-content: space-around;
   flex-direction: column;
   @include desktop {
   flex-direction: row;
+  .iconGroup {
+    width: 25%;
+  }
 }
   .icon {
     height: 200px;
@@ -139,11 +157,17 @@ html {
 }
 
 .disclaimers {
-  margin: 30px;
+  background-color: lighten($dkgreen, 40);
+  padding: 30px;
   font-size: .5em;
   h5 {
     font-size: 1rem;
     font-family: $flavorfulfont;
     // text-align: center;
   }
+}
+
+.bottomSpacer {
+  background-color: $dkgreen;
+  height: 30px;
 }
