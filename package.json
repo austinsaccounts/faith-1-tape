@@ -1,17 +1,19 @@
 {
-  "name": "webpack-boilerplate",
+  "name": "faith-plus-one",
   "version": "4.0.0",
   "description": "Plain webpack 4 Boilerplate with Babel, SASS and lodash on board",
   "author": "Christoph von Gellhorn",
   "license": "MIT",
   "homepage": "https://github.com/cvgellhorn/webpack-boilerplate",
   "scripts": {
-    "dev": "cross-env NODE_ENV=dev webpack-dev-server --progress --mode development --config webpack.config.dev.js",
-    "build": "webpack -p --progress --mode production --config webpack.config.build.js"
+    "build2": "cross-env NODE_ENV=dev webpack-dev-server --progress --mode development --config webpack.config.dev.js",
+    "build": "webpack --mode development",
+    "start2": "webpack -p --progress --mode production --config webpack.config.build.js",
+    "start": "npm run build; webpack-dev-server --mode development --open"
   },
   "repository": {
     "type": "git",
-    "url": "https://cvgellhorn@github.com/cvgellhorn/webpack-boilerplate.git"
+    "url": "git+https://cvgellhorn@github.com/cvgellhorn/webpack-boilerplate.git"
   },
   "dependencies": {
     "lodash": "4.17.11"
@@ -34,5 +36,10 @@
     "webpack-cli": "3.1.0",
     "webpack-dev-server": "3.1.8",
     "webpack-merge": "4.1.4"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/cvgellhorn/webpack-boilerplate/issues"
+  },
+  "main": "webpack.config.build.js",
+  "keywords": []
 }
