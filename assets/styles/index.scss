@@ -1,13 +1,28 @@
 // Apply a natural box layout model to all elements
 // but allowing components to change
 // http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+
+$simpleFont: 'Noto Sans', sans-serif;
+$flavorfulfont: 'Lobster', cursive;
+
 html {
     box-sizing: border-box;
+    font-family: $simpleFont;
+    font-size: 24px;
 }
+
 *, *:before, *:after {
     box-sizing: inherit;
     margin: 0px;
     padding: 0px;
+
+}
+.navLogoBar {
+  top: 0;
+  min-height: 80px;
+  background-color: #7c3f32;
+  position: fixed;
+  width: 100%;
 }
 
 .parallaxImage1 {
@@ -38,6 +53,8 @@ html {
   text-align: center;
   .productDescription {
     padding-bottom: 30px;
+    font-family: $flavorfulfont;
+    font-size: 1.5rem;
   }
   .productImage {
     img {
@@ -65,4 +82,10 @@ html {
 
 .disclaimers {
   margin: 30px;
+  font-size: .5em;
+  h5 {
+    font-size: 1rem;
+    font-family: $flavorfulfont;
+    // text-align: center;
+  }
 }
